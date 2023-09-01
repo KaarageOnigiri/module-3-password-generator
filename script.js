@@ -5,11 +5,6 @@ function generatePassword() {
   // testing
   console.log("You ran the function 'generatePassword()'")
 
-  // 1. write prompts
-  // 2. validate the inputs
-  // 3. generate password based on criteria
-  // 4. display password to the page (already done)
-
   const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowerCase = "abcdefghijklmnopqrstuvwxyz";
   const number = "0123456789";
@@ -21,35 +16,32 @@ function generatePassword() {
     var length = prompt("Error, please enter a password between 8 - 128 characters:")
   }
 
-  var upperCasePermission = prompt("Would you like upper case to be included? (Type 'yes' or 'no')");
-  var lowerCasePermission = prompt("Would you like lower case to be included? (Type 'yes' or 'no')");
-  var numberPermission = prompt("Would you like numbers to be included? (Type 'yes' or 'no')");
-  var symbolPermission = prompt("Would you like symbols to be included? (Type 'yes' or 'no')");
+  var upperCasePermission = confirm("Would you like upper case to be included?");
+  var lowerCasePermission = confirm("Would you like lower case to be included?");
+  var numberPermission = confirm("Would you like numbers to be included?");
+  var symbolPermission = confirm("Would you like symbols to be included?");
   
   console.log(upperCasePermission, lowerCasePermission, numberPermission, symbolPermission);
   
   var password = "";
-  var combined;
+  var combined = "";
   
-  if (upperCasePermission.toLowerCase() === "yes") {
-    password += upperCase[Math.floor(Math.random()*upperCase.length)];
+  if (upperCasePermission) {
     combined += upperCase;
     // testing
     console.log("upper case");
   }
-  if (lowerCasePermission.toLowerCase() === "yes") {
-    password += lowerCase[Math.floor(Math.random()*lowerCase.length)];
+  if (lowerCasePermission) {  
     combined += lowerCase;
+    // testing
     console.log("lower case");
   }
-  if (numberPermission.toLowerCase() === "yes") {
-    password += number[Math.floor(Math.random()*number.length)];
+  if (numberPermission) {   
     combined += number;
     //testing
     console.log("number");
   }
-  if (symbolPermission.toLowerCase() === "yes") {
-    password += symbol[Math.floor(Math.random()*symbol.length)];
+  if (symbolPermission) {   
     combined += symbol;
     // testing
     console.log("symbol");
