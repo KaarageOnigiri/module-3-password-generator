@@ -20,6 +20,13 @@ function generatePassword() {
     while (length < 8 || length > 128) {
       length = prompt("Error, please enter a password between 8 - 128 characters:");
     }
+    if (length >= 8 && length <= 128) {
+
+    }
+    else {
+      alert("Please enter a number. Try again.");
+      return;
+    }
   }
   else {
     alert("Please enter a number. Try again.");
