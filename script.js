@@ -12,8 +12,18 @@ function generatePassword() {
 
   var length = prompt("Please enter the length of your password:");
   
-  while (length < 8 || length > 128) {
+  if (length >= 8 && length <= 128) {
+
+  }
+  else if (length < 8 || length > 128) {
     length = prompt("Error, please enter a password between 8 - 128 characters:");
+    while (length < 8 || length > 128) {
+      length = prompt("Error, please enter a password between 8 - 128 characters:");
+    }
+  }
+  else {
+    alert("Please enter a number. Try again.");
+    return;
   }
 
   var upperCasePermission = confirm("Would you like upper case to be included?");
