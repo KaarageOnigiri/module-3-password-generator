@@ -11,9 +11,9 @@ function generatePassword() {
   const symbol = "~!@#$%^&*()_+{}|-=[]<>/";
 
   var length = prompt("Please enter the length of your password:");
-
+  
   while (length < 8 || length > 128) {
-    var length = prompt("Error, please enter a password between 8 - 128 characters:")
+    length = prompt("Error, please enter a password between 8 - 128 characters:");
   }
 
   var upperCasePermission = confirm("Would you like upper case to be included?");
@@ -45,6 +45,10 @@ function generatePassword() {
     combined += symbol;
     // testing
     console.log("symbol");
+  }
+  if (combined === "") {
+    alert("You need to select at least one type. Try again.");
+    return;
   }
   
   while (password.length < length) {
